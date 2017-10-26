@@ -27,7 +27,7 @@ class CantTestThis(unittest.TestCase):
        self.assertIsNotNone(self.se_grid_server)
        
        
-   def test_remote_webdriver(self):
+   def trest_remote_webdriver(self):
        # how to remove a browser from a test
        del self.browsers_to_test['chrome']
        logging.debug('test_remote_webdriver')
