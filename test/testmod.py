@@ -34,9 +34,12 @@ class CantTestThis(unittest.TestCase):
        
        for each_browser in self.browsers_to_test:
          logging.debug(each_browser)
-       	 driver = webdriver.Remote(self.remote_webdriver_url, self.browsers_to_test[each_browser])
-         driver.get('http://www.google.com')
-         self.assertEqual(driver.title, 'Google')
+         try:
+	       	 driver = webdriver.Remote(self.remote_webdriver_url, self.browsers_to_test[each_browser])
+	         driver.get('http://www.google.com')
+	         self.assertEqual(driver.title, 'Google')
+	     finally:
+	     	 driver.quit()
 
 
    def test_q2smart_hit(self):
@@ -45,7 +48,10 @@ class CantTestThis(unittest.TestCase):
    
        for each_browser in self.browsers_to_test:
          logging.debug(each_browser)
-         driver = webdriver.Remote(self.remote_webdriver_url, self.browsers_to_test[each_browser])
-         driver.get('https://q2smart-preprod.q2ebanking.com/000000014/test/#/login')
-         self.assertEqual(driver.title, 'Goat')
+         try:
+	         driver = webdriver.Remote(self.remote_webdriver_url, self.browsers_to_test[each_browser])
+    	     driver.get('https://q2smart-preprod.q2ebanking.com/000000014/test/#/login')
+        	 self.assertEqual(driver.title, 'Goat')
+         finally:
+	     	 driver.quit()
    
