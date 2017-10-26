@@ -2,6 +2,5 @@
 
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
-virtualenv testenv
-source testenv/bin/activate
-pip install selenium
+pip install --user pipenv
+pipenv install selenium
