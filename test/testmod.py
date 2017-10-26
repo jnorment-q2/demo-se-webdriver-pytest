@@ -7,7 +7,7 @@ from selenium import webdriver
 
 class CantTestThis(unittest.TestCase):
 
-   def setup(self):
+   def setUp(self):
       self.se_grid_server = os.environ.get('SE_GRID_SERVER')
       self.remote_webdriver_url = '{}/wd/hub'.format(self.se_grid_server)
       self.browsers_to_test = { 'firefox': webdriver.DesiredCapabilities.FIREFOX.copy(), 
@@ -16,7 +16,7 @@ class CantTestThis(unittest.TestCase):
 
 
 
-   def teardown(self):
+   def tearDown(self):
       pass
 
  
