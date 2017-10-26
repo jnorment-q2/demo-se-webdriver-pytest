@@ -27,7 +27,7 @@ class CantTestThis(unittest.TestCase):
        self.assertIsNotNone(self.se_grid_server)
        
        
-   def trest_remote_webdriver(self):
+   def test_remote_webdriver(self):
        # how to remove a browser from a test
        del self.browsers_to_test['chrome']
        logging.debug('test_remote_webdriver')
@@ -51,7 +51,7 @@ class CantTestThis(unittest.TestCase):
          try:
              driver = webdriver.Remote(self.remote_webdriver_url, self.browsers_to_test[each_browser])
              driver.get('https://q2smart-preprod.q2ebanking.com/000000014/test/#/login')
-             self.assertEqual(driver.title, 'Goat')
+             self.assertEqual(driver.title, 'Q2 Smart')
          finally:
 	     	 driver.quit()
    
