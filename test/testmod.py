@@ -5,7 +5,7 @@ import os
 from selenium import webdriver
 import logging
 
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.CRITICAL)
 
 
 class CantTestThis(unittest.TestCase):
