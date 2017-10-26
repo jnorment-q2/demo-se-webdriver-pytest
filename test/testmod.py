@@ -3,6 +3,9 @@
 import unittest
 import os
 from selenium import webdriver
+import logging
+
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
 
 class CantTestThis(unittest.TestCase):
@@ -13,7 +16,7 @@ class CantTestThis(unittest.TestCase):
       self.browsers_to_test = { 'firefox': webdriver.DesiredCapabilities.FIREFOX.copy(), 
                                 'chrome': webdriver.DesiredCapabilities.CHROME.copy(), 
                               }
-
+      logging.debug('setUp.')
 
 
    def tearDown(self):
@@ -27,8 +30,10 @@ class CantTestThis(unittest.TestCase):
    def test_remote_webdriver(self):
        # how to remove a browser from a test
        del self.browsers_to_test['chrome']
+       logging.debug('test_remote_webdriver')
        
        for each_browser in self.browsers_to_test:
+         logging.debug(each_browser)
        	 driver = webdriver.Remote(self.remote_webdriver_url, self.browsers_to_test[each_browser])
          driver.get('http://www.google.com')
          self.assertEqual(driver.title, 'Google')
@@ -36,9 +41,11 @@ class CantTestThis(unittest.TestCase):
 
    def test_q2smart_hit(self):
        del self.browsers_to_test['chrome']
+       logging.debug('test_q2smart_hit')
    
        for each_browser in self.browsers_to_test:
-       	 driver = webdriver.Remote(self.remote_webdriver_url, self.browsers_to_test[each_browser])
+         logging.debug(each_browser)
+         driver = webdriver.Remote(self.remote_webdriver_url, self.browsers_to_test[each_browser])
          driver.get('https://q2smart-preprod.q2ebanking.com/000000014/test/#/login')
          self.assertEqual(driver.title, 'Goat')
    
