@@ -35,6 +35,7 @@ class CantTestThis(unittest.TestCase):
 
 
    def test_q2smart_hit(self):
+       del self.browsers_to_test['chrome']
    
        for each_browser in self.browsers_to_test:
        	 driver = webdriver.Remote(self.remote_webdriver_url, self.browsers_to_test[each_browser])
