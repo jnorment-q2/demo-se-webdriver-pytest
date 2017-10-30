@@ -2,7 +2,6 @@ pipeline{
     agent any
     
     environment {
-        SE_GRID_SERVER = 'http://130.211.145.233:4444'
     }
     
     stages{
