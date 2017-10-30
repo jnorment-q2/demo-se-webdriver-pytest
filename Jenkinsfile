@@ -1,8 +1,9 @@
 pipeline{
     agent any
     
-    #environment {
-    #}
+    environment {
+      SKIP_THIS_VAR = ''
+    }
     
     stages{
     
