@@ -12,7 +12,7 @@ class CantTestThis(unittest.TestCase):
 
    def setUp(self):
       self.se_grid_server = os.environ.get('SE_GRID_SERVER')
-      self.test_URL = os.eniron.get('TEST_URL')
+      self.test_URL = os.environ.get('TEST_URL')
       self.test_URL_title = os.environ.get('TEST_URL_TITLE')
       self.remote_webdriver_url = '{}/wd/hub'.format(self.se_grid_server)
       self.browsers_to_test = { 'firefox': webdriver.DesiredCapabilities.FIREFOX.copy(), 
